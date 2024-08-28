@@ -27,11 +27,20 @@ function Menu() {
       <h2>Our Menu</h2>
 
       {numpizzas > 0 ? (
-        <ul className="pizzas">
-          {pizzas.map((pizza) => (
-            <Pizza pizzaObj={pizza} key={pizza.name} />
-          ))}
-        </ul>
+        <>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic vitae
+            soluta illum minima eveniet repudiandae, minus facere, cumque
+            voluptas tempora placeat nobis ad ex nulla optio quisquam? Repellat,
+            molestias doloribus.
+          </p>
+
+          <ul className="pizzas">
+            {pizzas.map((pizza) => (
+              <Pizza pizzaObj={pizza} key={pizza.name} />
+            ))}
+          </ul>
+        </>
       ) : (
         <p>we&apos;re still working on our menu please come back later:)</p>
       )}
@@ -39,18 +48,18 @@ function Menu() {
   );
 }
 
-function Pizza(props) {
-  console.log(props);
+function Pizza({ pizzaObj }) {
+  //console.log(props);
 
-  //if (props.propObj.soldOut) return <header />;
+  //if (propObj.soldOut) return <header />;
 
   return (
     <li className="pizza">
-      <img src={props.pizzaObj.photoName} alt="{props.pizzaObj.name}" />
+      <img src={pizzaObj.photoName} alt="{props.pizzaObj.name}" />
       <div>
-        <h3>{props.pizzaObj.name}</h3>
-        <p>{props.pizzaObj.ingredients}</p>
-        <span>{props.pizzaObj.price}</span>
+        <h3>{pizzaObj.name}</h3>
+        <p>{pizzaObj.ingredients}</p>
+        <span>{pizzaObj.price}</span>
       </div>
     </li>
   );
