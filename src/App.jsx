@@ -40,6 +40,10 @@ function Menu() {
 }
 
 function Pizza(props) {
+  console.log(props);
+
+  //if (props.propObj.soldOut) return <header />;
+
   return (
     <li className="pizza">
       <img src={props.pizzaObj.photoName} alt="{props.pizzaObj.name}" />
@@ -60,6 +64,13 @@ function Footer() {
   console.log(isOpen);
   //if (hour >= openHour && hour <= closeHour) alert("we're currently Open!!");
   //else alert("Sorry we're closed");
+
+  if (!isOpen)
+    return (
+      <p>
+        Were Happy to welcome you between {openHour}:00 and {closeHour}:00
+      </p>
+    );
   return (
     <footer className="footer">
       {isOpen ? (
